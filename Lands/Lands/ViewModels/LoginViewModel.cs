@@ -1,5 +1,7 @@
 ﻿namespace Lands.ViewModels
 {
+    using System.Windows.Input;
+
     public class LoginViewModel
     {
         #region Properties
@@ -32,6 +34,13 @@
         public LoginViewModel()
         {
             this.IsRemembered = true;
+        }
+        #endregion
+
+        #region Commands
+        public ICommand LoginCommand
+        {
+            get;
         }
         #endregion
     }
