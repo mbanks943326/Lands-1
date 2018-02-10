@@ -21,7 +21,8 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         Text="Email" 
-                        TextColor="Black">
+                        TextColor="Black"
+                        VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="0"
@@ -33,7 +34,8 @@
                         Grid.Row="1"
                         Grid.Column="0"
                         Text="Password" 
-                        TextColor="Black">
+                        TextColor="Black"
+                        VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="1"
