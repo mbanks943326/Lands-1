@@ -1,9 +1,8 @@
 ﻿namespace Lands.ViewModels
 {
-    using System;
+    using Models;
     using System.Collections.ObjectModel;
     using System.Linq;
-    using Models;
 
     public class LandViewModel : BaseViewModel
     {
