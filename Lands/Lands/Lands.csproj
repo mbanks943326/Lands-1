@@ -27,6 +27,12 @@
     <Compile Update="Views\CurrenciesPage.xaml.cs">
       <DependentUpon>CurrenciesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\LanguagesPage.xaml.cs">
+      <DependentUpon>LanguagesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TranslationsPage.xaml.cs">
+      <DependentUpon>TranslationsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

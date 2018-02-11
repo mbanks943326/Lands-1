@@ -9,5 +9,7 @@
         <tabs:LandPage/>
         <tabs:BordersPage/>
         <tabs:CurrenciesPage/>
+        <tabs:TranslationsPage/>
+        <tabs:LanguagesPage/>
     </TabbedPage.Children>
 </TabbedPage>

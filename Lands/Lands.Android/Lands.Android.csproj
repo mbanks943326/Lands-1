@@ -74,6 +74,8 @@
     <AndroidResource Include="Resources\drawable\ic_action_info.png" />
     <AndroidResource Include="Resources\drawable\ic_action_language.png" />
     <AndroidResource Include="Resources\drawable\ic_action_monetization_on.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_translate.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_people.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
