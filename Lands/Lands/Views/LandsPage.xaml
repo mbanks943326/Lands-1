@@ -9,10 +9,59 @@
         <StackLayout
             BindingContext="{Binding Lands}"
             Padding="5">
-            <Label
-                FontSize="Large"
-                Text="Lands Page">
-            </Label>
+            <SearchBar
+                Placeholder="Search..."
+                Text="{Binding Filter, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            <ListView 
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                ItemsSource="{Binding Lands}"
+                RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image 
+                                    Grid.Column="0" 
+                                    HeightRequest="100"
+                                    HorizontalOptions="End" 
+                                    Source="{Binding Flag}"
+                                    WidthRequest="100">
+                                </Image>
+                                <StackLayout 
+                                    Grid.Column="1"
+                                    VerticalOptions="Center">
+                                    <Label 
+                                        FontSize="Large" 
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                    </Label>
+                                    <Label 
+                                        Text="{Binding Capital}"
+                                        TextColor="Black">
+                                    </Label>
+                                </StackLayout>
+                                <Image 
+                                    Grid.Column="2"
+                                    HorizontalOptions="End" 
+                                    Source="ic_chevron_right">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
