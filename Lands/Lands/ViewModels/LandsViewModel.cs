@@ -3,7 +3,6 @@
     using GalaSoft.MvvmLight.Command;
     using Models;
     using Services;
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -29,8 +28,8 @@
             get { return this.filter; }
             set
             {
-                this.Search();
                 SetValue(ref this.filter, value);
+                this.Search();
             }
         }
 
@@ -88,6 +87,7 @@
             }
 
             this.myLands = (List<Land>)response.Result;
+            MainViewModel.GetInstance().LandsList = this.myLands;
             this.Lands = new ObservableCollection<LandItemViewModel>(
                 this.ToObservableList(this.myLands));
             this.IsRefreshing = false;
