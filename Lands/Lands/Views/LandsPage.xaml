@@ -2,17 +2,9 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:Class="Lands.Views.LandsPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="Lands">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Lands}"
@@ -32,21 +24,19 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
+                                </Grid.GestureRecognizers>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <ffimageloading:CachedImage
-                                   HeightRequest="80" 
-                                   Source="{Binding Flag2, Converter={StaticResource SvgImageSourceConverter}}"
-                                   WidthRequest="80">
-                                </ffimageloading:CachedImage>
                                 <StackLayout 
-                                    Grid.Column="1"
+                                    Grid.Column="0"
                                     VerticalOptions="Center">
                                     <Label 
-                                        FontSize="Large" 
+                                        FontAttributes="Bold"
+                                        FontSize="Medium" 
                                         Text="{Binding Name}"
                                         TextColor="Black">
                                     </Label>
@@ -56,12 +46,9 @@
                                     </Label>
                                 </StackLayout>
                                 <Image 
-                                    Grid.Column="2"
+                                    Grid.Column="1"
                                     HorizontalOptions="End" 
                                     Source="ic_chevron_right">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
-                                    </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
                         </ViewCell>

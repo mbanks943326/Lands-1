@@ -10,10 +10,58 @@
             BindingContext="{Binding Land}">
             <StackLayout
                 Padding="5">
-                <Label 
-                    Text="Welcome to Xamarin.Forms!"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="{Binding Land.Name}"
+                    TextColor="Black">
+                </Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Capital:"
+                        TextColor="Black">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Capital}"
+                        TextColor="Black">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Population:"
+                        TextColor="Black">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Population, StringFormat='{0:N0}', Mode=TwoWay}"
+                        TextColor="Black">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Area:"
+                        TextColor="Black">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        FontAttributes="Bold"
+                        Text="{Binding Land.Area, StringFormat='{0:N0}', Mode=TwoWay}"
+                        TextColor="Black">
+                    </Label>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

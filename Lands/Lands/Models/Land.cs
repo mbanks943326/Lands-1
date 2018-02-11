@@ -76,13 +76,5 @@
 
         [JsonProperty(PropertyName = "cioc")]
         public string Cioc { get; set; }
-
-        public string Flag2
-        {
-            get
-            {
-                return this.Flag.Replace("https", "http");
-            }
-        }
     }
 }
