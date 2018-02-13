@@ -1,8 +1,8 @@
 ﻿namespace Lands.ViewModels
 {
-    using System;
-    using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
+    using System.Windows.Input;
+    using Views;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
@@ -51,6 +51,9 @@
         {
             this.IsRemembered = true;
             this.IsEnabled = true;
+
+            this.Email = "jzuluaga55@gmail.com";
+            this.Password = "1234";
         }
         #endregion
 
@@ -98,13 +101,13 @@
                 return;
             }
 
-            await Application.Current.MainPage.DisplayAlert(
-                "Error",
-                "Fuck yeahhh!!!!",
-                "Accept");
-
             this.IsRunning = false;
             this.IsEnabled = true;
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
     }
