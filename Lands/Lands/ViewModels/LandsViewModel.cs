@@ -1,6 +1,5 @@
 ﻿namespace Lands.ViewModels
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Models;
@@ -9,9 +8,6 @@
 
     public class LandsViewModel : BaseViewModel
     {
-<<<<<<< HEAD
-        // http://restcountries.eu/rest/v2/all
-=======
         #region Services
         private ApiService apiService;
         #endregion
@@ -72,6 +68,5 @@
             var a = 1;
         }
         #endregion
->>>>>>> ffeb7c36391d3ce89d33b8ca72cd18e72119073d
     }
 }
