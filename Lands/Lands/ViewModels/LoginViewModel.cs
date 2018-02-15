@@ -1,8 +1,8 @@
 ﻿namespace Lands.ViewModels
 {
-    using GalaSoft.MvvmLight.Command;
-    using System;
     using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
+    using Views;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
@@ -100,6 +100,12 @@
                 this.Password = string.Empty;
                 return;
             }
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LansPage());
 
             this.IsRunning = false;
             this.IsEnabled = true;
