@@ -5,25 +5,32 @@
     using System.Windows.Input;
     using Xamarin.Forms;
 
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
+        #region Attributes
+        private string email;
+        private string password;
+        private bool isRunning;
+        private bool isEnabled;
+        #endregion
+
         #region Properties
         public string Email
         {
-            get;
-            set;
+            get { return this.email; }
+            set { this.SetValue(ref this.email, value); }        
         }
 
         public string Password
         {
-            get;
-            set;
+            get { return this.password; }
+            set { this.SetValue(ref this.password, value); }        
         }
 
         public bool IsRunning
         {
-            get;
-            set;
+            get { return this.isRunning; }
+            set { this.SetValue(ref this.isRunning, value); }        
         }
 
         public bool IsRemembered
@@ -31,12 +38,22 @@
             get;
             set;
         }
+
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { this.SetValue(ref this.isEnabled, value); }        
+        }
         #endregion
 
         #region Constructors
         public LoginViewModel()
         {
             this.IsRemembered = true;
+            this.IsEnabled = true;
+
+            this.Email = "jzuluaga55@gmail.com";
+            this.Password = "1234";
         }
         #endregion
 
@@ -68,6 +85,24 @@
                     "Accept");
                 return;
             }
+
+            this.IsRunning = true;
+            this.IsEnabled = false;
+
+            if (this.Email != "jzuluaga55@gmail.com" || this.Password != "1234")
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Email or password wrong.",
+                    "Accept");
+                this.Password = string.Empty;
+                return;
+            }
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
         }
         #endregion
     }
