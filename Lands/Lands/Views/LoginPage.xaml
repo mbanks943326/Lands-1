@@ -101,6 +101,9 @@
                         Aspect="AspectFit"
                         Source="facebook_logo"
                         WidthRequest="80">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginFacebookCommand}"/>
+                        </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Aspect="AspectFit"

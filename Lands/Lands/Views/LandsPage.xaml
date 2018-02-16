@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,10 +7,54 @@
     Title="Lands">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Lands}">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            BindingContext="{Binding Lands}"
+            Padding="5">
+            <SearchBar
+                Placeholder="Search..."
+                Text="{Binding Filter, Mode=TwoWay}"
+                SearchCommand="{Binding SearchCommand}">
+            </SearchBar>
+            <ListView 
+                HasUnevenRows="true" 
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                ItemsSource="{Binding Lands}"
+                RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout 
+                                    Grid.Column="0"
+                                    VerticalOptions="Center">
+                                    <Label 
+                                        FontAttributes="Bold"
+                                        FontSize="Medium" 
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                    </Label>
+                                    <Label 
+                                        Text="{Binding Capital}"
+                                        TextColor="Black">
+                                    </Label>
+                                </StackLayout>
+                                <Image 
+                                    Grid.Column="1"
+                                    HorizontalOptions="End" 
+                                    Source="ic_chevron_right">
+                                </Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
