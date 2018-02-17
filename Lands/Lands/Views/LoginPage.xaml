@@ -100,6 +100,9 @@
                     <Image
                         Source="facebook_logo"
                         WidthRequest="80">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="LoginFacebookCommand"/>
+                        </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Source="instagram_logo"
