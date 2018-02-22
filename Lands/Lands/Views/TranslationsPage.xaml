@@ -2,17 +2,17 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="Lands.Views.LandPage"
+    x:Class="Lands.Views.TranslationsPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Icon="ic_action_info"
-    Title="Information">
+    Icon="ic_action_translate"
+    Title="Translations">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Land}"
             Padding="5">
             <Label
-                FontSize="Large"
                 FontAttributes="Bold"
+                FontSize="Large"
                 HorizontalOptions="Center"
                 Text="{Binding Land.Name}"
                 TextColor="Black">
@@ -25,160 +25,134 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="0"
-                    Text="Capital:"
+                    Text="Germany:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="0"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Capital}"
+                    Text="{Binding Land.Translations.Germany}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="1"
-                    Text="Population:"
+                    Text="Spanish:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="1"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Population, StringFormat='{0:N0}'}"
+                    Text="{Binding Land.Translations.Spanish}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="2"
-                    Text="Area:"
+                    Text="French:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="2"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Area, StringFormat='{0:N0}'}"
+                    Text="{Binding Land.Translations.French}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="3"
-                    Text="Alpha Code 2:"
+                    Text="Japanese:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="3"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Alpha2Code}"
+                    Text="{Binding Land.Translations.Japanese}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="4"
-                    Text="Alpha Code 3:"
+                    Text="Italian:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="4"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Alpha3Code}"
+                    Text="{Binding Land.Translations.Italian}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="5"
-                    Text="Region:"
+                    Text="Brazilian:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="5"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Region}"
+                    Text="{Binding Land.Translations.Brazilian}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="6"
-                    Text="Subregion:"
+                    Text="Portuges:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="6"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Subregion}"
+                    Text="{Binding Land.Translations.Portuges}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="7"
-                    Text="Demonym:"
+                    Text="Dutch:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="7"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Demonym}"
+                    Text="{Binding Land.Translations.Dutch}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="8"
-                    Text="GINI:"
+                    Text="Croatian:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="8"
                     FontAttributes="Bold"
-                    Text="{Binding Land.Gini, StringFormat='{0:N2}'}"
+                    Text="{Binding Land.Translations.Croatian}"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="0"
                     Grid.Row="9"
-                    Text="Native Name:"
+                    Text="Persian:"
                     TextColor="Black">
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="9"
                     FontAttributes="Bold"
-                    Text="{Binding Land.NativeName}"
-                    TextColor="Black">
-                </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="10"
-                    Text="Numeric Code:"
-                    TextColor="Black">
-                </Label>
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="10"
-                    FontAttributes="Bold"
-                    Text="{Binding Land.NumericCode}"
-                    TextColor="Black">
-                </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="11"
-                    Text="CIOC:"
-                    TextColor="Black">
-                </Label>
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="11"
-                    FontAttributes="Bold"
-                    Text="{Binding Land.Cioc}"
+                    Text="{Binding Land.Translations.Persian}"
                     TextColor="Black">
                 </Label>
             </Grid>
-        </StackLayout>    
+        </StackLayout>        
     </ContentPage.Content>
 </ContentPage>
